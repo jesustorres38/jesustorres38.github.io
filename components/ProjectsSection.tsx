@@ -9,7 +9,7 @@ const projects = [
     name: "Adidas",
     description:
       "Web and mobile app that is dedicated to the manufacture of sports equipment and fashion products.",
-    image: "/adidas.png",
+    image: "./adidas.png",
     github: "https://github.com/adidas",
     link: "https://www.adidas.com/us",
   },
@@ -17,14 +17,14 @@ const projects = [
     name: "LeadTech Group",
     description:
       "Online project incubator base in barcelona. They mainly use jamstack.",
-    image: "/leadtech-group.png",
+    image: "./leadtech-group.png",
     link: "https://leadtech.com/",
   },
   {
     name: "Netcentric SLU",
     description:
       "Software company specialized in development with AEM (adobe experience manager).",
-    image: "/netcentric.png",
+    image: "./netcentric.png",
     github: "https://github.com/Netcentric",
     link: "https://www.netcentric.biz//",
   },
