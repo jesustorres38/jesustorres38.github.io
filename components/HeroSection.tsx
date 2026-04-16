@@ -7,13 +7,15 @@ import { HiArrowDown } from "react-icons/hi"
 const HeroSection = () => {
   return (
     <section id='home'>
-      <div className='flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left'>
-        <div className='md:mt-2 md:w-1/2'>
+      <div className='flex flex-col text-center items-center justify-center motion-safe:animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-48 md:flex-row md:space-x-4 md:text-left'>
+        <div className='relative md:mt-2 md:w-1/2 flex justify-center'>
+          <div className='absolute inset-0 rounded-full bg-violet-200 dark:bg-violet-900/30 blur-3xl -z-10' />
           <Image
             src='./profile.png'
-            alt=''
+            alt='Jesus Torres profile photo'
             width={325}
             height={325}
+            priority
             className='rounded-full shadow-2xl'
           />
         </div>
@@ -51,7 +53,7 @@ const HeroSection = () => {
           offset={-100}
           duration={500}
         >
-          <HiArrowDown size={35} className='animate-bounce' />
+          <HiArrowDown size={35} className='motion-safe:animate-bounce' />
         </Link>
       </div>
     </section>

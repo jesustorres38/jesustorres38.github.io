@@ -2,7 +2,6 @@
 import React from "react"
 import { useState } from "react"
 import { Link } from "react-scroll/modules"
-import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { RiMoonFill, RiSunLine } from "react-icons/ri"
 import { IoMdMenu, IoMdClose } from "react-icons/io"
@@ -22,7 +21,7 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "about",
   },
   {
-    label: "Projects",
+    label: "Experience",
     page: "projects",
   },
 ]
@@ -30,7 +29,6 @@ const NAV_ITEMS: Array<NavItem> = [
 export default function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === "system" ? systemTheme : theme
-  const pathname = usePathname()
   const [navbar, setNavbar] = useState(false)
   return (
     <header className='w-full mx-auto  px-4 fixed top-0 z-50 shadow bg-white dark:bg-stone-900 dark:border-b dark:border-stone-600'>
@@ -44,8 +42,9 @@ export default function Navbar() {
             </Link>
             <div className='md:hidden'>
               <button
-                className='p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border'
+                className='p-2 text-gray-700 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-600 focus:border-gray-400 focus:border'
                 onClick={() => setNavbar(!navbar)}
+                aria-label={navbar ? "Close menu" : "Open menu"}
               >
                 {navbar ? <IoMdClose size={30} /> : <IoMdMenu size={30} />}
               </button>
@@ -82,14 +81,16 @@ export default function Navbar() {
               {currentTheme === "dark" ? (
                 <button
                   onClick={() => setTheme("light")}
-                  className='bg-slate-100 p-2 rounded-xl'
+                  className='bg-slate-100 p-2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-600'
+                  aria-label='Switch to light mode'
                 >
                   <RiSunLine size={25} color='black' />
                 </button>
               ) : (
                 <button
                   onClick={() => setTheme("dark")}
-                  className='bg-slate-100 p-2 rounded-xl'
+                  className='bg-slate-100 p-2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-600'
+                  aria-label='Switch to dark mode'
                 >
                   <RiMoonFill size={25} />
                 </button>

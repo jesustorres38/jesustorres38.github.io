@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Jesus Torres",
-  description: "Personal page, CV 2023 Jesus Torres",
+  description: "Personal portfolio of Jesus Torres, Software Engineer based in Barcelona, Spain.",
 }
 
 export default function Home() {

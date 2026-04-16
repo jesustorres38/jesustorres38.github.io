@@ -12,14 +12,14 @@ const Footer = () => {
       <hr className='w-full h-0.5 mx-auto mt-8 bg-neutral-200 border-0'></hr>
       <div className='mx-auto  p-4 flex flex-col text-center text-neutral-900 md:flex-row md:justify-between'>
         <div className='flex flex-row items-center justify-center space-x-1 text-neutral-500 dark:text-neutral-100'>
-          © 2023 Jesus Torres - Credits to Hosna Qasmei
-          <a href='/' className='hover:underline'></a>
+          © {new Date().getFullYear()} Jesus Torres - Credits to Hosna Qasmei
         </div>
         <div className='flex flex-row items-center justify-center space-x-2 mb-1'>
           <a
             href='https://github.com/jesustorres38'
             rel='noreferrer'
             target='_blank'
+            aria-label='GitHub profile'
           >
             <AiOutlineGithub
               className='hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100'
@@ -30,6 +30,7 @@ const Footer = () => {
             href='https://www.linkedin.com/in/jesustorres38/'
             rel='noreferrer'
             target='_blank'
+            aria-label='LinkedIn profile'
           >
             <AiOutlineLinkedin
               className='hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100'

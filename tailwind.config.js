@@ -11,6 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-plus-jakarta)", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440pd" },
       animation: {
         fadeIn: "fadeIn 1.5s",

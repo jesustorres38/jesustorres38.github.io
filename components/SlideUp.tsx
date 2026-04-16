@@ -11,6 +11,17 @@ export default function SlideUp({ children, offset = "0px" }: Props) {
   const ref = useRef(null)
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    if (prefersReduced) {
+      if (ref.current) {
+        (ref.current as HTMLElement).classList.remove("opacity-0")
+      }
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

@@ -34,9 +34,12 @@ const ProjectsSection = () => {
   return (
     <section id='projects'>
       <h1 className='my-10 text-center font-bold text-4xl'>
-        Latest Projects
+        Work Experience
         <hr className='w-6 h-1 mx-auto my-4 bg-violet-600 border-0 rounded'></hr>
       </h1>
+      <p className='text-center text-neutral-600 dark:text-neutral-400 mb-10'>
+        Companies and organizations I have contributed to as a Software Engineer.
+      </p>
 
       <div className='flex flex-col space-y-28'>
         {projects.map((project, idx) => {
@@ -48,7 +51,7 @@ const ProjectsSection = () => {
                     <Link href={project.link}>
                       <Image
                         src={project.image}
-                        alt=''
+                        alt={project.name}
                         width={1000}
                         height={1000}
                         className='rounded-xl shadow-xl hover:opacity-70'
@@ -62,14 +65,14 @@ const ProjectsSection = () => {
                     </p>
                     <div className='flex flex-row align-bottom space-x-4'>
                       {project.github && (
-                        <Link href={project.github} target='_blank'>
+                        <Link href={project.github} target='_blank' aria-label={`${project.name} GitHub repository`}>
                           <BsGithub
                             size={30}
                             className='hover:-translate-y-1 transition-transform cursor-pointer hover:text-violet-600'
                           />
                         </Link>
                       )}
-                      <Link href={project.link} target='_blank'>
+                      <Link href={project.link} target='_blank' aria-label={`Visit ${project.name}`}>
                         <BsArrowUpRightSquare
                           size={30}
                           className='hover:-translate-y-1 transition-transform cursor-pointer hover:text-violet-600'
